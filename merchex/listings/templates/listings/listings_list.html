@@ -1,11 +1,18 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+
 <html>
     <head><title>Merchex</title></head>
     <body>
         <h1>On va lister les annonces pour les articles : </h1>
             <ul>
                 {% for a in listings %}
-                <li> {{ a.title|upper }} </li>
+                <li><a href="{% url 'listings-detail' a.id %}"> {{ a.title|upper }}</a> </li>
                 {% endfor %}
             </ul>  
     </body>
 </html>
+
+{% endblock %}
